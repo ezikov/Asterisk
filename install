@@ -1,0 +1,10 @@
+sudo yum -y update 
+sudo yum -y install epel-release
+sudo yum -y install centos-release-scl
+sudo yum -y install rh-python36
+scl enable rh-python36 bash
+sudo yum install python3-pip
+sudo pip3 install alembic
+scl enable rh-python36 bash
+sudo yum install python36-mysql.x86_64
+alembic -c ./config.ini upgrade head
